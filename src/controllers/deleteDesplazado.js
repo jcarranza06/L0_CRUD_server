@@ -1,15 +1,17 @@
 const dbConnection = require('../db/dbConnection')
 const SQLScripts = require('../db/SQLScripts')
 
-module.exports.insertDesplazado = (req, res) => {
+module.exports.deleteDesplazado = (req, res) => {
 
     const MUNICIPIO_ID = req.body.MUNICIPIO_ID;
     const PERSONA_ID = req.body.PERSONA_ID;
-   
-    const consulta = SQLScripts.scriptInsertDesplazado
+    console.log(PERSONA_ID);
 
-    insertDesplazado = () => {
-        
+    const consulta = SQLScripts.scriptDeleteDesplazado
+    
+    
+
+    deleteDesplazado = () => {
         dbConnection.query(consulta, [MUNICIPIO_ID,PERSONA_ID], (err, results) => {
             if (err) {
                 console.log(err)
@@ -25,5 +27,5 @@ module.exports.insertDesplazado = (req, res) => {
         })
     }
 
-    insertDesplazado()
+    deleteDesplazado()
 }

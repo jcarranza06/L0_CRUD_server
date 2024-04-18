@@ -1,16 +1,20 @@
 const dbConnection = require('../db/dbConnection')
 const SQLScripts = require('../db/SQLScripts')
 
-module.exports.insertDesplazado = (req, res) => {
+module.exports.editDesplazado = (req, res) => {
 
-    const MUNICIPIO_ID = req.body.MUNICIPIO_ID;
     const PERSONA_ID = req.body.PERSONA_ID;
-   
-    const consulta = SQLScripts.scriptInsertDesplazado
+    const MUNICIPIO_ID_NUEVO = req.body.MUNICIPIO_ID_NUEVO;
+    const MUNICIPIO_ID_VIEJO = req.body.MUNICIPIO_ID_VIEJO;
+    
 
-    insertDesplazado = () => {
+    console.log(PERSONA_ID);
+
+    const consulta = SQLScripts.scriptEditDesplazado
+
+    editDesplazado = () => {
         
-        dbConnection.query(consulta, [MUNICIPIO_ID,PERSONA_ID], (err, results) => {
+        dbConnection.query(consulta, [MUNICIPIO_ID_NUEVO, MUNICIPIO_ID_VIEJO, PERSONA_ID], (err, results) => {
             if (err) {
                 console.log(err)
                 res.send({ statusCode: 400, message: "wrong data" })
@@ -25,5 +29,5 @@ module.exports.insertDesplazado = (req, res) => {
         })
     }
 
-    insertDesplazado()
+    editDesplazado()
 }
