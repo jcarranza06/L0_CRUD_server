@@ -10,7 +10,7 @@ module.exports.insertPersona = (req, res) => {
     const PERSONA_SEXO = req.body.PERSONA_SEXO;
     const PERSONA_EDAD = req.body.PERSONA_EDAD;
     const PERSONA_TELEFONO = req.body.PERSONA_TELEFONO;
-    const PERSONA_RESPONSABLE = req.body.PERSONA_RESPONSABLE === '' ? null : req.body.PERSONA_RESP
+    const PERSONA_RESPONSABLE = req.body.PERSONA_RESPONSABLE === '' ? null : req.body.PERSONA_RESPONSABLE
 
     const consulta = SQLScripts.scriptInsertPerson
 
