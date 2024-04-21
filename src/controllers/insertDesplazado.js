@@ -3,8 +3,8 @@ const SQLScripts = require('../db/SQLScripts')
 
 module.exports.insertDesplazado = (req, res) => {
 
-    const MUNICIPIO_ID = req.body.MUNICIPIO_ID;
-    const PERSONA_ID = req.body.PERSONA_ID;
+    const MUNICIPIO_ID = req.query.MUNICIPIO_ID;
+    const PERSONA_ID = req.query.PERSONA_ID;
    
     const consulta = SQLScripts.scriptInsertDesplazado
 
